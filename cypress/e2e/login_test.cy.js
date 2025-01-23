@@ -1,11 +1,18 @@
 
 describe('Başarılı form doldurulduğunda submit edebiliyorum', () => {
     it('success sayfasını açabiliyorum.', () => {
-        cy.visit('/');
-        cy.get('input[name="email"]').type('test@example.com');
-        cy.get('input[name="password"]').type('password123');
+        cy.visit('http://localhost:5173/');
+
+        cy.get('input[name="email"]').type('erdem.guntay@wit.com.tr');
+        cy.get('input[name="password"]').type('9fxIH0GXesEwH_I');
         cy.get('input[type="checkbox"]').check();
         cy.get('button[type="submit"]').click();
-        cy.url().should('include', '/success');
+        cy.contains('helal').should('be.visible')
+
+
+
+
+
+
     });
-  });
+});
